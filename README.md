@@ -1,4 +1,4 @@
-# favorite_olaces
+# favorite_places
 
 A new Flutter project.
 
