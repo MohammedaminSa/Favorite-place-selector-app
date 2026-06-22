@@ -5,7 +5,7 @@
 
 ## Getting Started
 
-This project is used to store and display your favorite 
+This project is used to store and display your favorite places
 
 A few resources to get you started if this is your first Flutter project:
 
