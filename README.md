@@ -5,7 +5,8 @@
 
 ## Getting Started
 
-This project is used to store 
+This project is used to store and display your favorite 
+
 A few resources to get you started if this is your first Flutter project:
 
 - [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
