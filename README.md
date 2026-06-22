@@ -2,10 +2,10 @@
 
 2nd Flutter project.
 
+
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
+This project is used to store 
 A few resources to get you started if this is your first Flutter project:
 
 - [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
