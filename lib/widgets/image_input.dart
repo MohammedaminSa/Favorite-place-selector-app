@@ -15,7 +15,10 @@ class _ImageInputState extends State<ImageInput> {
   void _takePicture() async {
     final imagePicker = ImagePicker();
 
-    final pickedImage = await imagePicker.pickImage(source: ImageSource.camera);
+    final pickedImage = await imagePicker.pickImage(
+      source: ImageSource.camera,
+      maxWidth: 600,
+    );
 
     if (pickedImage == null) {
       return;
@@ -33,11 +36,14 @@ class _ImageInputState extends State<ImageInput> {
       label: const Text('Take Picture'),
     );
     if (_selectedfImage != null) {
-      content = Image.file(
-        _selectedfImage!,
-        fit: BoxFit.cover,
-        width: double.infinity,
-        height: double.infinity,
+      content = GestureDetector(
+        onTap: _takePicture,
+        child: Image.file(
+          _selectedfImage!,
+          fit: BoxFit.cover,
+          width: double.infinity,
+          height: double.infinity,
+        ),
       );
     }
     return Container(
