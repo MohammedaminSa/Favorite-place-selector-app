@@ -43,6 +43,11 @@ class _LocationInputState extends State<LocationInput> {
     setState(() {
       _isGettingLocation = false;
     });
+    print(
+      locationData.latitude.toString() +
+          " " +
+          locationData.longitude.toString(),
+    );
   }
 
   @override
