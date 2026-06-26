@@ -41,13 +41,24 @@ class _LocationInputState extends State<LocationInput> {
     locationData = await location.getLocation();
 
     setState(() {
-      _pickedLocation = locationData;
       _isGettingLocation = false;
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    Widget previewContent = Text(
+      "no location choosen",
+      textAlign: TextAlign.center,
+      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+        color: Theme.of(context).colorScheme.onSurface,
+      ),
+    );
+
+    if (_isGettingLocation) {
+      previewContent = Center(child: CircularProgressIndicator());
+    }
+
     return Column(
       children: [
         Container(
@@ -55,20 +66,14 @@ class _LocationInputState extends State<LocationInput> {
           width: double.infinity,
           decoration: BoxDecoration(border: Border.all(color: Colors.grey)),
           alignment: Alignment.center,
-          child: Text(
-            "no location choosen",
-            textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-              color: Theme.of(context).colorScheme.onSurface,
-            ),
-          ),
+          child: previewContent,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             TextButton.icon(
-              onPressed: () {},
+              onPressed: _getCurrentLocation,
               icon: Icon(
                 Icons.location_on,
                 color: Theme.of(context).colorScheme.primary,
